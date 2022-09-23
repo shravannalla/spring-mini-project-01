@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Access Denied</title>
+</head>
+
+<body>
+
+<div style="background-color:lightseagreen; padding:16px; margin:0px">
+    <a style="text-decoration:none" th:href="@{/}"><span style="color:white; padding:12px">
+    Home
+    </span></a>
+
+    <a style="text-decoration:none" th:href="@{aboutUs}"><span style="color:white; padding:12px">
+    About us
+</span></a>
+    <a style="text-decoration:none" th:href="@{contactUs}"><span style="color:white; padding:12px">Contact us</span></a>
+    <form th:action="@{/logout}" method="post" style="position: absolute;
+right:    48px;
+top:  0px; padding: 14px 40px;">
+        <input type="submit" value="Logout" style="color:white;background-color:red"/>
+    </form>
+</div>
+
+<h2>Access Denied - You are not authorized to access this resource.</h2>
+
+<hr>
+
+<a th:href="@{/}">Back to Home Page</a>
+
+
+
+<button onclick="history.back()" style="position: absolute;
+left:    48px;
+bottom:   48px; padding: 14px 40px; border-radius: 50%;">Go Back</button>
+
+</body>
+
+</html>

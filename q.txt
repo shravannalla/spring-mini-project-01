@@ -1,0 +1,6 @@
+Create a basic Spring Application that demonstrates the following
+1. Use of dependency injection and Autowiring
+2. Interaction of Spring Controllers with Views using JSP or Thymeleaf
+3. Interaction of Spring Controllers with Database using Hibernate or JPA
+4. Unit test for the code.
+5. Sonar Cloud Coverage >80%

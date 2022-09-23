@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div style="background-color:lightseagreen; padding:16px; margin:0px">
+    <a style="text-decoration:none" th:href="@{/}"><span style="color:white; padding:12px">
+    Home
+    </span></a>
+
+    <a style="text-decoration:none" th:href="@{aboutUs}"><span style="color:white; padding:12px">
+    About us
+</span></a>
+    <a style="text-decoration:none" th:href="@{contactUs}"><span style="color:white; padding:12px">Contact us</span></a>
+    <form th:action="@{/logout}" method="post" style="position: absolute;
+right:    48px;
+top:  0px; padding: 14px 40px;">
+        <input type="submit" value="Logout" style="color:white;background-color:red"/>
+    </form>
+</div>
+
+<br><br>
+<div class="aboutus">
+    <h1 style="text-align:center" >About us</h1>
+    <hr>
+    <p style="text-align:center">
+        We Epic Reads are known for helping the readers to find there suitable<br>
+        book. We categorize the books based on genre and price and <br>
+        make users to find their book easily
+
+    </p>
+</div>
+
+
+<button onclick="history.back()" style="position: absolute;
+left:    48px;
+bottom:   48px; padding: 14px 40px; border-radius: 50%;">Go Back</button>
+
+</body>
+</html>

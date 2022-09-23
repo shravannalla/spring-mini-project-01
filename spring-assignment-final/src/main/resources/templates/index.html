@@ -1,0 +1,61 @@
+<!-- meta http-equiv="refresh" content="0; URL='/demo/book/list'" -->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>body {
+            background-image: url('img/book_bg.jpg');
+        }
+    </style>
+</head>
+<body style="background-image:url('img/book_open.jpg'); background-size:100%;background-position: center;
+  background-repeat: no-repeat;padding-bottom: 25%;">
+
+<div style="background-color:lightseagreen; padding:16px; margin:0px">
+    <a style="text-decoration:none" th:href="@{/}"><span style="color:white; padding:12px">
+    Home
+    </span></a>
+
+    <a style="text-decoration:none" th:href="@{book/aboutUs}"><span style="color:white; padding:12px">
+    About us
+</span></a>
+    <a style="text-decoration:none" th:href="@{book/contactUs}"><span style="color:white; padding:12px">Contact us</span></a>
+    <form th:action="@{/logout}" method="post" style="position: absolute;
+right:    48px;
+top:  0px; padding: 14px 40px;">
+        <input type="submit" value="Logout" style="color:white;background-color:red"/>
+    </form>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<h4 style="text-align:center; font-size:100px; font-family:cursive;  text-shadow: 2px 2px black; color:orange">Epic Reads</h4>
+
+<br><br>
+<br><br>
+
+<div class="col-md-12 text-center">
+    <a th:href="@{book/list}" class="btn btn-info btn-sm" style="padding: 14px 40px">Show Book list</a>
+
+    <br><br>
+    <br><br>
+
+    <a th:href="@{admin/list}" class="btn btn-info btn-sm" style="padding: 14px 40px">Edit Book Details</a>
+</div>
+
+<!-- form th:action="@{/logout}" method="post" style="position: absolute;
+right:    48px;
+bottom:   48px; padding: 14px 40px;">
+    <input type="submit" value="Logout"/>
+</form -->
+
+
+</body>
+</html>

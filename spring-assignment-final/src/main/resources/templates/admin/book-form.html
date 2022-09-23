@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<style>
+		.error{
+			color:red;
+		}
+	</style>
+	<title>Save Book</title>
+</head>
+
+<body>
+
+<div style="background-color:lightseagreen; padding:16px; margin:0px">
+	<a style="text-decoration:none" th:href="@{/}"><span style="color:white; padding:12px">
+    Home
+    </span></a>
+
+	<a style="text-decoration:none" th:href="@{/book/aboutUs}"><span style="color:white; padding:12px">
+    About us
+</span></a>
+	<a style="text-decoration:none" th:href="@{/book/contactUs}"><span style="color:white; padding:12px">Contact us</span></a>
+	<form th:action="@{/logout}" method="post" style="position: absolute;
+right:    48px;
+top:  0px; padding: 14px 40px;">
+		<input type="submit" value="Logout" style="color:white;background-color:red"/>
+	</form>
+</div>
+
+<br><br>
+
+<div class="container">
+
+	<h3>Book Directory</h3>
+	<hr>
+
+	<p class="h4 mb-4">Save Book</p>
+
+	<form action="#" th:action="@{/admin/save}"
+		  th:object="${book}" method="POST">
+
+		<!-- <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+			<p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+		</div> -->
+
+		<!-- Add hidden form field to handle update -->
+		<input type="hidden" th:field="*{id}" />
+
+		<input type="text" th:field="*{bookTitle}"
+			   class="form-control mb-4 col-4" placeholder="Book title">
+		<p th:if="${#fields.hasErrors('bookTitle')}" th:errors="*{bookTitle}" class="error"></p>
+
+		<select th:field="*{bookGenre}" class="form-control mb-4 col-4" placeholder="Book genre">
+			<option th:value="'Horror'" th:text="Horror"></option>
+			<option th:value="'Comedy'" th:text="Comedy"></option>
+			<option th:value="'Fiction'" th:text="Fiction"></option>
+			<option th:value="'Philosophy'" th:text="Philosophy"></option>
+			<option th:value="'Drama'" th:text="Drama"></option>
+			<option th:value="'Novel'" th:text="Novel"></option>
+		</select>
+		<p th:if="${#fields.hasErrors('bookGenre')}" th:errors="*{bookGenre}" class="error"></p>
+
+		<input type="text" th:field="*{price}"
+			   class="form-control mb-4 col-4" placeholder="Price">
+		<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></p>
+
+
+		<button type="submit" class="btn btn-info col-2">Save</button>
+
+	</form>
+
+	<hr>
+	<a th:href="@{/admin/list}">Back to Books List</a>
+
+</div>
+
+
+<button onclick="history.back()" style="position: absolute;
+left:    48px;
+bottom:   48px; padding: 14px 40px; border-radius: 50%;">Go Back</button>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
